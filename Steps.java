@@ -1,17 +1,27 @@
 package maCode;
+
 import java.util.Scanner;
 
 public class Steps {
 
-    static void chooseDifficulty() {
+    static void chooseDifficulty(Languages language) {
         // Definitions.
-    
+        String difficulty = "0";
+        Scanner scanner = new Scanner(System.in);
+        String certain = "n";
+
         // Update.
-      }
+        System.out.println(language.getDificulty());
+        if (scanner.hasNextLine()) {
+            difficulty = scanner.nextLine();
+        }
+        System.out.println(language.getDifficultyChoosed() + difficulty + language.getCertain());
+        scanner.close();
+    }
 
     static Languages chooseLanguage() {
         // Definitions.
-        Languages languages = new Languages(1);
+        Languages language = new Languages(1);
         Scanner scanner = new Scanner(System.in);
         String cL = "0";
         String certain = "n";
@@ -21,13 +31,12 @@ public class Steps {
             System.out.println("Choose your language.\n1: Português\n2: English");
             System.out.print("(1/2): ");
             cL = scanner.nextLine();
-
-            System.out.println(languages.getChoosedLanguage(Utilities.getLanguageIndex(cL)));
-            System.out.print(languages.getYesNo(Utilities.getLanguageIndex(cL)));
+            language = new Languages(Utilities.getLanguageIndex(cL));
+            System.out.println(language.getChoosedLanguage() + language.getCertain());
+            System.out.print(language.getYesNo());
             certain = scanner.nextLine();
         }
         scanner.close();
-        languages = new Languages(Utilities.getLanguageIndex(cL));
-        return languages;
+        return language;
     }
 }
