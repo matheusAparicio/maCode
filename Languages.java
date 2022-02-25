@@ -1,6 +1,10 @@
 package maCode;
 
 public class Languages {
+
+    // Constructor.
+    String cL;
+
     // Definitions.
     private String[] or = {"ou", "or"};
     private String[] choosedLanguage = {"A linguagem escolhida foi português. Você tem certeza?", "The choosed language was english. Are you certain?"};
