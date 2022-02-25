@@ -9,8 +9,9 @@ public class Steps {
         // Update.
       }
 
-    static String chooseLanguage(Languages languages) {
+    static Languages chooseLanguage() {
         // Definitions.
+        Languages languages = new Languages(1);
         Scanner scanner = new Scanner(System.in);
         String cL = "0";
         String certain = "n";
@@ -21,11 +22,12 @@ public class Steps {
             System.out.print("(1/2): ");
             cL = scanner.nextLine();
 
-            System.out.println(languages.getChoosedLanguage(cL));
-            System.out.print(languages.getYesNo(cL));
+            System.out.println(languages.getChoosedLanguage(Utilities.getLanguageIndex(cL)));
+            System.out.print(languages.getYesNo(Utilities.getLanguageIndex(cL)));
             certain = scanner.nextLine();
         }
         scanner.close();
-        return cL;
+        languages = new Languages(Utilities.getLanguageIndex(cL));
+        return languages;
     }
 }

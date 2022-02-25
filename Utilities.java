@@ -8,4 +8,12 @@ public class Utilities {
         }
         return false;
     }
+
+    static int getLanguageIndex(String cL) {
+        int index = Integer.parseInt(cL);
+        if (index - 1 >= 0) {
+            return (index - 1);
+        }
+        return 0;
+    }
 }

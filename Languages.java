@@ -3,29 +3,27 @@ package maCode;
 public class Languages {
 
     // Constructor.
-    String cL;
+    int cL;
+
+    public Languages(int cl) {
+        cL = cl;
+    }
 
     // Definitions.
-    private String[] or = {"ou", "or"};
-    private String[] choosedLanguage = {"A linguagem escolhida foi português. Você tem certeza?", "The choosed language was english. Are you certain?"};
-    private String[] yesNo = {"(s/n): ", "(y/n): "};
+    private String[] OR = {"ou", "or"};
+    private String[] CHOOSED_LANGUAGE = {"A linguagem escolhida foi português. Você tem certeza?", "The choosed language was english. Are you certain?"};
+    private String[] YES_NO = {"(s/n): ", "(y/n): "};
 
     // Getters.
-    String getOr(String stringIndex) {
-        int index;
-        index = Integer.parseInt(stringIndex) - 1;
-        return or[index];
+    String getOr() {
+        return OR[cL];
     }
 
-    String getChoosedLanguage(String stringIndex) {
-        int index;
-        index = Integer.parseInt(stringIndex) - 1;
-        return choosedLanguage[index];
+    String getChoosedLanguage(int stringIndex) {
+        return CHOOSED_LANGUAGE[stringIndex];
     }
 
-    String getYesNo(String stringIndex) {
-        int index;
-        index = Integer.parseInt(stringIndex) - 1;
-        return yesNo[index];
+    String getYesNo(int stringIndex) {
+        return YES_NO[stringIndex];
     }
 }

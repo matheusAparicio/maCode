@@ -3,8 +3,7 @@ package maCode;
 class Main {
 
   public static void main(String[] args) {
-    Languages languages = new Languages();
-    String cL = Steps.chooseLanguage(languages); // s cL = choosedLanguage
+    Languages languages = Steps.chooseLanguage(); // cL = choosedLanguage
     Steps.chooseDifficulty();
   }
   
