@@ -5,7 +5,10 @@ import java.util.Scanner;
 class Main {
 
   public static void main(String[] args) {
+    chooseLanguage();
+  }
 
+  static void chooseLanguage() {
     // Definitions.
     Languages languages = new Languages();
     Scanner scanner = new Scanner(System.in);
